@@ -1,0 +1,11 @@
+{
+  "item.storytelling.storyliner": "Storyliner",
+  "entity.storytelling.storyteller": "Storyteller",
+  "storytelling.settings.title": "Settings",
+  "storytelling.settings.texture": "Texture",
+  "storytelling.settings.model": "Model",
+  "storytelling.settings.animation": "Animation",
+  "storytelling.settings.storyline": "Storyline",
+  "storytelling.actions.new": "New Action",
+  "storytelling.actions.wait": "Wait"
+}

@@ -1,0 +1,9 @@
+{
+	"required": true,
+	"package": "net.gurudev.storytelling.mixin",
+	"compatibilityLevel": "JAVA_21",
+	"mixins": ["StorytellingModMixin"],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}

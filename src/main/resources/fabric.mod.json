@@ -1,0 +1,38 @@
+{
+	"schemaVersion": 1,
+	"id": "storytelling",
+	"version": "${version}",
+	"name": "Storytelling",
+	"description": "A mod that allows you to write a narrative for each unique story.",
+	"authors": ["GuruDev"],
+	"custom": {
+		"modmenu": {
+			"links": {
+				"modmenu.discord": "https://discord.gg/jEGF5fb"
+			}, "update_checker": true
+		}
+	},
+	"contact": {
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/storytelling/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": ["net.gurudev.storytelling.StorytellingMod"],
+		"client": ["net.gurudev.storytelling.StorytellingClient"]
+	},
+	"mixins": [
+		"storytelling.mixins.json", {
+			"config": "storytelling.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.15.11",
+		"minecraft": "~1.21",
+		"java": ">=21",
+		"fabric-api": "*",
+		"geckolib": ">=4.5"
+	}
+}
