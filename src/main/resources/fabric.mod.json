@@ -19,8 +19,8 @@
 	"icon": "assets/storytelling/icon.png",
 	"environment": "*",
 	"entrypoints": {
-		"main": ["net.gurudev.storytelling.StorytellingMod"],
-		"client": ["net.gurudev.storytelling.StorytellingClient"]
+		"main": ["net.gurudev.storytelling.Main"],
+		"client": ["net.gurudev.storytelling.MainClient"]
 	},
 	"mixins": [
 		"storytelling.mixins.json", {
