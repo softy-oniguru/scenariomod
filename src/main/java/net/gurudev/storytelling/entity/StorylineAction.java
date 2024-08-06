@@ -4,12 +4,13 @@ import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtElement;
 
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
+
+import static net.gurudev.storytelling.Main.MOD_ID;
 
 public class StorylineAction {
     private String type; private HashMap<String, Object> params;
-
-    public void editParam(String key, Object value) { params.put(key, value); }
 
     public StorylineAction(String type, HashMap<String, Object> params) {
         this.type = type; this.params = params;
@@ -35,6 +36,14 @@ public class StorylineAction {
             case "speak": break;
             default: throw new UnsupportedOperationException();
         }
+    }
+
+    public String getTranslationKey() {
+        return MOD_ID + ".actions.type." + getType().toLowerCase(Locale.ROOT);
+    }
+
+    public void editParam(String key, Object value) {
+        params.put(key, value);
     }
 
     public Map<String, Object> getParams() { return params; }
