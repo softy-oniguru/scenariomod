@@ -1,6 +1,7 @@
 package net.gurudev.storytelling.input;
 
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
+import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.gurudev.storytelling.entity.StorytellerEntity;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.option.KeyBinding;
@@ -11,11 +12,11 @@ import org.lwjgl.glfw.GLFW;
 import static net.gurudev.storytelling.entity.EntityManager.STORYTELLER;
 
 public class KeybindingHandler {
-	public static KeyBinding STORY_KEYBINDING = new KeyBinding(
+	public static KeyBinding STORY_KEYBINDING = KeyBindingHelper.registerKeyBinding(new KeyBinding(
 		"key.storytelling.performStory",
 		InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_R,
 		"category.storytelling.keybindings"
-	);
+	));
 
 	public static void registerKeybindings() {
 		ClientTickEvents.END_CLIENT_TICK.register(KeybindingHandler::handleKeyboardEvents);
