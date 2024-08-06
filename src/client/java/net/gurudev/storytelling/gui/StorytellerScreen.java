@@ -22,10 +22,10 @@ public class StorytellerScreen extends Screen {
     protected void init() {
         super.init(); GuiElement gui = new GuiElement(width, height);
 
-        TextRowElement textureRow = new TextRowElement(this, this.textRenderer, -gui.offset*2, Text.translatable("storytelling.settings.texture"), entity.getTexture());
+        TextRowElement textureRow = new TextRowElement(this, this.textRenderer, -gui.offset*2, Text.translatable("storytelling.settings.texture"), "");
         this.addDrawableChild(textureRow.getText()); this.addDrawableChild(textureRow.getElement());
 
-        TextRowElement modelRow = new TextRowElement(this, this.textRenderer, -gui.offset, Text.translatable("storytelling.settings.model"), entity.getModel());
+        TextRowElement modelRow = new TextRowElement(this, this.textRenderer, -gui.offset, Text.translatable("storytelling.settings.model"), "");
         this.addDrawableChild(modelRow.getText()); this.addDrawableChild(modelRow.getElement());
 
         ButtonRowElement storylineRow = new ButtonRowElement(this, this.textRenderer, gui.offset, Text.translatable("storytelling.settings.storyline"), callback ->

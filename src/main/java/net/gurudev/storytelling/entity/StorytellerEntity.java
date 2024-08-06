@@ -1,5 +1,7 @@
 package net.gurudev.storytelling.entity;
 
+import com.google.common.collect.ImmutableList;
+import net.gurudev.storytelling.Main;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.mob.PathAwareEntity;
 import net.minecraft.nbt.NbtCompound;
@@ -15,7 +17,7 @@ public class StorytellerEntity extends PathAwareEntity {
 	private String texture; private String model;
 	public int currentStep;
 
-	public List<StorylineAction> getActions() { return this.actions; }
+	public List<StorylineAction> getActions() { return ImmutableList.copyOf(this.actions); }
 	public void addAction(StorylineAction action) { this.actions.add(action); }
 
 	public StorytellerEntity(EntityType<? extends PathAwareEntity> entityType, World world) {
@@ -23,7 +25,7 @@ public class StorytellerEntity extends PathAwareEntity {
 	}
 
 	public void performStory() {
-		System.out.println(actions.size());
+		Main.LOGGER.debug("Performing story actions. Action list size: {}", actions.size());
 		if (currentStep < actions.size()) {
 			actions.get(currentStep).execute(this);
 		} else { currentStep = 0; }

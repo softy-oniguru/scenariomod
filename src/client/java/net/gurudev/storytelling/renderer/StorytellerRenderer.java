@@ -6,7 +6,7 @@ import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.MobEntityRenderer;
 import net.minecraft.util.Identifier;
 
-import static net.gurudev.storytelling.StorytellingClient.MOD_ID;
+import static net.gurudev.storytelling.Main.MOD_ID;
 
 public class StorytellerRenderer extends MobEntityRenderer<StorytellerEntity, StorytellerModel> {
     public StorytellerRenderer(EntityRendererFactory.Context context) {
