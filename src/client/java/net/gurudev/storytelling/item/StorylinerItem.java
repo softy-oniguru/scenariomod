@@ -22,7 +22,9 @@ public class StorylinerItem extends Item {
 		if (entity.getType() == EntityManager.STORYTELLER) {
 			if (!player.getWorld().isClient) {
 				player.sendMessage(Text.of("Your story is being recorded..."), false);
-				MinecraftClient.getInstance().setScreen(new StorytellerScreen((StorytellerEntity) entity));
+				MinecraftClient.getInstance().execute(() ->
+						MinecraftClient.getInstance().setScreen(new StorytellerScreen((StorytellerEntity) entity))
+				);
 			} player.getItemCooldownManager().set(this, 20);
 			return ActionResult.success(true);
 		} else {
